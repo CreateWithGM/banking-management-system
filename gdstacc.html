@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Tracker Feature Description and Scenarios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-btn {
+            padding: 10px 20px;
+            background: #007bff;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .login-btn:hover {
+            background: #0056b3;
+        }
+        .scenario {
+            margin-bottom: 20px;
+        }
+        .title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .info {
+            margin-bottom: 5px;
+        }
+        .amount {
+            font-weight: bold;
+            color: blue;
+        }
+        .message {
+            font-style: italic;
+            color: green;
+        }
+        .highlight {
+            background-color: red;
+            font-weight: bold;
+        }
+        .scenario1 {
+            background-color: #d7ffd9; /* Light green */
+        }
+        .scenario2 {
+            background-color: #ffe6e6; /* Light red */
+        }
+        .scenario3 {
+            background-color: #fff7cc; /* Light yellow */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button-container">
+            <button class="login-btn" onclick="window.open('login.html', '_blank')">Enter Your Savings Tracker</button>
+        </div>
+
+        <h1>Savings Tracker Feature Description</h1>
+
+        <h2>Initial Deposit and Goal Amount:</h2>
+        <ul>
+            <li>Users can set their initial deposit amount within the range of ₹20,000 to ₹50,000.</li>
+            <li>The goal amount is user-defined but must be a minimum of ₹10,000. Users can choose any amount above this minimum.</li>
+        </ul>
+
+        <h2>Selected Days and Transactions:</h2>
+        <ul>
+            <li>Users are allowed to select up to 10 days to use their savings within the tracker.</li>
+            <li>Each day allows for a maximum of 1 transaction, ensuring controlled usage and planning.</li>
+        </ul>
+
+        <h2>Balanced Transactions and Interest Calculation:</h2>
+        <ul>
+            <li>Transactions must be balanced equally throughout the selected days to avoid imbalanced usage patterns.</li>
+            <li>If transactions are balanced, a 2% interest is added to the savings account along with the daily average transaction amount.</li>
+            <li>The daily average transaction amount is calculated based on the total transactions made during the goal period divided by the number of days.</li>
+        </ul>
+
+        <h2>User Notification and Information:</h2>
+        <ul>
+            <li>Users are not informed about these criteria explicitly by the system.</li>
+            <li>The system silently checks for balanced transactions (deviation within 10% of the average transaction) without user notification.</li>
+        </ul>
+
+        <h2>Interest and Average Transaction Amount Addition:</h2>
+        <ul>
+            <li>If transactions are balanced and the goal is achieved, the system adds a 2% interest along with the daily average transaction amount to the savings account at the end of the goal period.</li>
+            <li>This interest and average transaction amount are added to the savings account once the goal is achieved and transactions are balanced.</li>
+        </ul>
+
+        <h2>Overall Functionality:</h2>
+        <ul>
+            <li>The Savings Tracker feature aims to encourage disciplined and balanced usage of savings over a limited period, rewarding users with interest and average transaction amount additions if they meet the balanced transaction criteria.</li>
+            <li>Users can track their savings progress without explicit notifications, relying on the system's monitoring and message display based on transaction balance checks.</li>
+        </ul>
+
+        <h1>Savings Tracker Scenarios</h1>
+
+        <div class="scenario scenario1">
+            <div class="title">Scenario 1: Goal Achieved and Transactions Balanced</div>
+            <div class="info">Initial Amount: <span class="amount">₹50,000</span></div>
+            <div class="info">Goal Amount: <span class="amount">₹10,000</span></div>
+            <div class="info">Remaining Amount: <span class="amount">₹10,000</span> (Goal Achieved)</div>
+            <div class="info">Transactions Balanced: <span class="amount">Yes</span></div>
+            <div class="info">Deviation from Average: <span class="amount">₹400</span> (Within 10% of ₹4,000)</div>
+            <div class="info">Message: <span class="message">Goal achieved and transactions are balanced.</span></div>
+            <div class="info">Amount Used per Day: ₹4,400, ₹3,600, ₹4,100, ₹4,250, ₹4,050, ₹3,950, ₹3,650, ₹4,300, ₹3,700, ₹4,000</div>
+            <div class="info">Amount Added to Savings Bank: <span class="amount">₹1,000 + (2/100) * ₹1,000 = ₹1,020</span></div>
+        </div>
+
+        <div class="scenario scenario2">
+            <div class="title">Scenario 2: Goal Not Achieved</div>
+            <div class="info">Initial Amount: <span class="amount">₹50,000</span></div>
+            <div class="info">Goal Amount: <span class="amount">₹10,000</span></div>
+            <div class="info">Remaining Amount: <span class="amount">₹9,500</span></div>
+            <div class="info">Transactions Balanced: <span class="amount">Yes</span></div>
+            <div class="info">Deviation from Average: <span class="amount">₹400</span> (Within 10% of ₹4,000)</div>
+            <div class="info">Message: <span class="message">Goal not achieved.</span></div>
+            <div class="info">Amount Used per Day: ₹4,400, ₹3,600, ₹4,100, ₹4,550, ₹4,050, ₹3,950, ₹3,750, ₹4,400, ₹3,700, ₹4,000</div>
+            <div class="info">Amount Added to Savings Bank: <span class="amount">Not Applicable</span></div>
+        </div>
+
+        <div class="scenario scenario3">
+            <div class="title">Scenario 3: Goal Achieved but Transactions Imbalanced</div>
+            <div class="info">Initial Amount: <span class="amount">₹50,000</span></div>
+            <div class="info">Goal Amount: <span class="amount">₹10,000</span></div>
+            <div class="info">Remaining Amount: <span class="amount">₹10,000</span> (Goal Achieved)</div>
+            <div class="info">Transactions Balanced: <span class="amount">No</span></div>
+            <div class="info">Deviation from Average: <span class="amount">₹400</span> (Within 10% of ₹4,000)</div>
+            <div class="info">Message: <span class="message">Goal achieved but transactions are imbalanced.</span></div>
+            <div class="info">Amount Used per Day: 
+                <span class="highlight">₹4,800,</span>
+                <span class="highlight">₹3,200,</span>
+                ₹4,100, ₹4,050, ₹4,150, ₹3,950, ₹3,750, <span class="highlight">₹4,401,</span> <span class="highlight">₹3,599,</span> ₹4,000
+            </div>
+            <div class="info">Amount Added to Savings Bank: <span class="amount">Not Applicable</span></div>
+        </div>
+    </div>
+</body>
+</html>

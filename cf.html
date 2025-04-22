@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Feedback</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Background color for the entire page */
+            font-family: Arial, sans-serif; /* Choose your preferred font */
+            padding: 20px; /* Add padding for spacing */
+        }
+
+        .container {
+            max-width: 600px; /* Adjust the maximum width as needed */
+            margin: 0 auto; /* Center the container horizontally */
+            background-color: #fff; /* Background color for the container */
+            padding: 30px; /* Add padding inside the container */
+            border-radius: 10px; /* Rounded corners for the container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+        }
+
+        h1 {
+            text-align: center; /* Center the heading */
+            margin-bottom: 20px; /* Add space below the heading */
+        }
+
+        label {
+            display: block; /* Display labels as blocks for better spacing */
+            margin-bottom: 10px; /* Add space below each label */
+            font-weight: bold; /* Make labels bold */
+        }
+
+        textarea {
+            width: 100%; /* Take up full width */
+            height: 150px; /* Set a fixed height for the textarea */
+            padding: 10px; /* Add padding inside the textarea */
+            border-radius: 5px; /* Rounded corners for textarea */
+            border: 1px solid #ccc; /* Border color */
+            resize: vertical; /* Allow vertical resizing */
+        }
+
+        button {
+            display: block; /* Display the button as a block element */
+            width: 100%; /* Take up full width */
+            padding: 10px; /* Add padding inside the button */
+            margin-top: 20px; /* Add space above the button */
+            background-color: #007bff; /* Button background color */
+            color: #fff; /* Button text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners for the button */
+            cursor: pointer; /* Show pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Feedback</h1>
+        <form id="feedback-form">
+            <label for="feedback-text">Enter your feedback (up to 100 words):</label>
+            <textarea id="feedback-text" name="feedback" maxlength="100" placeholder="Please provide your feedback here (up to 100 words)" required></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+
+    </div>
+<script src="index.js"></script>
+</body>
+
+</html>

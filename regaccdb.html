@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registration Form</title>
+    <style>
+         body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3; /* Light gray background */
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff; /* White background for the form */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow effect */
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        input[type="date"],
+        input[type="tel"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff; /* Blue submit button */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form id="registrationForm" action="#">
+        <!-- Form fields as in your HTML -->
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <!-- Other form fields -->
+        <label for="middleName">Middle Name:</label>
+            <input type="text" id="middleName" name="middleName">
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="fatherName">Father's Name:</label>
+            <input type="text" id="fatherName" name="fatherName" required>
+
+            <label for="motherName">Mother's Name:</label>
+            <input type="text" id="motherName" name="motherName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{8,}$" title="Password must contain at least one number, one alphabet, one symbol, and be at least 8 characters long" required>
+
+            <label for="repassword">Re-type Password:</label>
+            <input type="password" id="repassword" name="repassword" required>
+
+            <label for="mobile">Contact:</label>
+            <input type="tel" id="mobile" name="mobile" maxlength="10" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="aadhar">Aadhar Number:</label>
+            <input type="text" id="aadhar" name="aadhar">
+
+            <label for="pan">PAN Number:</label>
+            <input type="text" id="pan" name="pan">
+
+            <label for="voterId">Voter ID:</label>
+            <input type="text" id="voterId" name="voterId">
+
+            <div class="account-types">
+                <label>Select which account do you want:</label><br>
+                <label for="savingsAccount">Savings Account:</label>
+                <input type="checkbox" id="savingsAccount" name="savingsAccount">
+                
+                <label for="currentAccount">Normal Current Account:</label>
+                <input type="checkbox" id="currentAccount" name="currentAccount">
+                
+                <label for="rdAccount">RD Account:</label>
+                <input type="checkbox" id="rdAccount" name="rdAccount">
+                
+                <label for="termDepositAccount">Term Deposit Account:</label>
+                <input type="checkbox" id="termDepositAccount" name="termDepositAccount">
+                
+                <label for="goalTrackerSavingsAccount">Goal Tracker Savings Account:</label>
+                <input type="checkbox" id="goalTrackerSavingsAccount" name="goalTrackerSavingsAccount">
+            </div>
+
+            <label for="otherBank">Do you have an account in another bank?</label>
+            <select id="otherBank" name="otherBank">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Collect form data
+            var formData = new FormData(this);
+
+            // Send form data to the server-side script using AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/save_to_database', true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    alert('Data saved successfully!');
+                } else {
+                    alert('Error saving data!');
+                }
+            };
+            xhr.send(formData);
+        });
+    </script>
+</body>
+</html>

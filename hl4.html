@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            background-color: #90be7d; /* Blue background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+
+        form {
+            background-color: rgb(200, 227, 26);
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label, input[type="text"], input[type="password"], input[type="checkbox"], input[type="submit"] {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff; /* Blue submit button */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="accountNo">Account Number:</label>
+        <input type="text" id="accountNo" name="accountNo" required><br><br>
+
+        <input type="checkbox" id="applyHomeLoan" name="applyHomeLoan">
+        <label for="applyHomeLoan">Apply for Home Loan</label><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
